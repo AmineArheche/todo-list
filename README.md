@@ -1,32 +1,124 @@
-# 🌟 To-Do List Pro 3D
+<div align="center">
 
-Application moderne et immersive de gestion de tâches et de productivité conçue avec **React 19**, **Vite**, **Tailwind CSS**, et dotée d'effets visuels **3D interactifs**, d'un système d'exportation multi-formats (**PDF, Excel, CSV, JSON**) et de célébrations dynamiques.
+# ⚡ To-Do List Pro 3D
 
----
+**Plateforme Moderne de Productivité & Gestionnaire de Tâches Haute Performance**
 
-## ✨ Fonctionnalités Clés
+[![React 19](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-- **🎯 Gestion Avancée des Tâches** : Création, modification, catégorisation, priorisation (Haute, Moyenne, Basse) et dates d'échéance.
-- **📊 Tableau de Bord & KPIs** : Taux d'achèvement en direct, tâches en retard, tâches du jour et messages dynamiques.
-- **📁 Exportation Multi-Formats** :
-  - **📄 PDF Document (`.pdf`)** : Rapport structuré avec en-tête, tableau stylisé (`jspdf-autotable`), pagination et indicateurs visuels.
-  - **📊 Tableur Excel (`.xlsx`)** : Fichier classeur multi-feuilles (*Tâches détaillées* et *Synthèse & KPIs*) généré via `xlsx` (SheetJS).
-  - **📑 Fichier CSV (`.csv`)** : Format avec séparateur point-virgule et BOM UTF-8 (`\uFEFF`) pour une compatibilité parfaite avec Excel / LibreOffice.
-  - **💾 Sauvegarde JSON (`.json`)** : Sauvegarde intégrale du profil, des catégories et des tâches.
-- **🎉 Popup de Célébration & Accumulation** : Modal 3D avec confettis multi-angles (`canvas-confetti`), détails de la tâche accomplie et barre de progression du jour.
-- **🧊 Expérience 3D & Design Glassmorphism** : Cartes à effet de profondeur 3D (*tilt* interactif), cube isométrique animé et splash screen dynamique.
-- **🌓 Thème Sombre / Clair** : Basculement instantané avec persistance du thème.
-- **💾 Persistance Locale** : Synchronisation continue de vos données dans le navigateur via `localStorage`.
+<p align="center">
+  Une application web ultra-fluide combinant une interface utilisateur <strong>3D immersive</strong>, un moteur d'exportation professionnel multi-formats (<strong>PDF, Excel, CSV, JSON</strong>) et un système de récompenses visuelles dynamique lors de la complétion des objectifs.
+</p>
+
+[Explorer les fonctionnalités](#-fonctionnalités-phares) • [Installation](#-installation--démarrage-rapide) • [Architecture](#-architecture-du-projet) • [Export Multi-Formats](#-suite-dexportation-avancée)
 
 ---
 
-## 🚀 Installation et Lancement
+</div>
 
-### Prérequis
-- [Node.js](https://nodejs.org/) (version 18 ou supérieure recommandée)
-- `npm` ou `yarn`
+## 🌟 Points Forts
 
-### 1. Cloner le dépôt
+- 🎨 **Esthétique 3D & Glassmorphism** : Effets de profondeur *Tilt 3D* réactifs aux mouvements de souris, cube isométrique animé en CSS3D, et flous d'arrière-plan modernes.
+- 📊 **Tableau de Bord & Métriques Clés** : Taux d'achèvement en direct, suivi des retards, tâches du jour et messages d'encouragement personnalisés.
+- 📄 **Exportation Multi-Formats Professionnelle** : Génération instantanée de rapports PDF haute fidélité, classeurs Excel multi-feuilles (`.xlsx`), fichiers CSV avec BOM UTF-8 et sauvegardes JSON.
+- 🎉 **Popup de Célébration & Accumulation** : Déclenchement automatique d'un modal 3D avec confettis multi-angles (`canvas-confetti`) à chaque objectif accompli.
+- ⚡ **Performance & Réactivité** : Construit avec React 19 et Vite pour un chargement instantané sans latence.
+- 🌓 **Mode Sombre / Mode Clair Natif** : Palette de couleurs HSL soignée avec transition douce et mémorisation automatique.
+- 🔒 **100% Privé & Persistant** : Toutes les données restent stockées localement sur votre navigateur via `localStorage`.
+
+---
+
+## 🚀 Fonctionnalités Phares
+
+### 1. 📋 Gestion Complète des Tâches (CRUD)
+- **Création & Édition Rapide** : Formulaire modal avec validation, sélection de priorité (Haute, Moyenne, Basse) et date d'échéance.
+- **Filtres Avancés & Recherche Instantanée** : Filtrez par état (*Toutes, En cours, Terminées*), par catégorie personnalisée ou par priorité.
+- **Tri Intelligent** : Classement par date d'échéance, priorité, titre alphabétique ou date de création.
+- **Badges Intelligents** : Détection automatique des tâches en retard avec alertes visuelles.
+
+### 2. 📊 Suite d'Exportation Avancée
+
+| Format | Extension | Caractéristiques & Usages |
+| :--- | :---: | :--- |
+| **Document PDF** | `.pdf` | Rapport stylisé avec en-tête d'entreprise, cartes KPIs, tableau formaté (`jspdf-autotable`), pagination et codes couleur de priorité. |
+| **Tableur Excel** | `.xlsx` | Classeur multi-feuilles généré par `xlsx` (Feuille 1 : *Tâches détaillées* ; Feuille 2 : *Synthèse & KPIs d'avancement*). |
+| **Fichier CSV** | `.csv` | Séparateur point-virgule (`;`) et encodage UTF-8 avec BOM (`\uFEFF`) pour une compatibilité native sous Microsoft Excel et LibreOffice. |
+| **Sauvegarde JSON** | `.json` | Exportation complète des métadonnées (profil utilisateur, catégories personnalisées, historique des tâches). |
+
+> 💡 **Périmètre personnalisable** : Exportez au choix la totalité des tâches, les tâches filtrées, uniquement les tâches terminées ou les tâches actives.
+
+### 3. 🎉 Célébration de la Réussite
+- Dès qu'une tâche est validée, un **popup 3D de félicitations** s'affiche.
+- Animation festive avec jet de confettis.
+- Récapitulatif du titre de la tâche et affichage de la jauge de progression globale.
+- Bouton de désactivation rapide disponible si vous préférez un flux de travail silencieux.
+
+---
+
+## 🛠️ Technologies & Bibliothèques
+
+- **Moteur & Framework** : [React 19](https://react.dev/) + [Vite 8](https://vitejs.dev/)
+- **Styling & Design System** : [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icônes** : [Lucide React](https://lucide.dev/)
+- **Animations Festives** : [Canvas Confetti](https://www.npmjs.com/package/canvas-confetti)
+- **Génération PDF** : [jsPDF](https://github.com/parallax/jsPDF) & [jsPDF-AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable)
+- **Génération Excel** : [SheetJS (xlsx)](https://sheetjs.com/)
+
+---
+
+## 📂 Architecture du Projet
+
+```text
+todo-list-pro/
+├── public/                     # Assets statiques & icônes SVG
+├── src/
+│   ├── assets/                 # Images et logos
+│   ├── components/
+│   │   ├── filters/            # Composants de filtrage & recherche
+│   │   │   ├── CategoryPills.jsx
+│   │   │   └── FilterBar.jsx
+│   │   ├── layout/             # En-tête & Dashboard de statistiques
+│   │   │   ├── Header.jsx
+│   │   │   └── StatsDashboard.jsx
+│   │   ├── tasks/              # Gestion des cartes & modals de tâches
+│   │   │   ├── TaskCard.jsx
+│   │   │   ├── TaskDeleteModal.jsx
+│   │   │   ├── TaskFormModal.jsx
+│   │   │   └── TaskList.jsx
+│   │   └── ui/                 # Composants d'interface & effets 3D
+│   │       ├── Badge.jsx
+│   │       ├── ExportModal.jsx          # Modal d'export PDF/Excel/CSV/JSON
+│   │       ├── Refresh3DButton.jsx
+│   │       ├── TaskAccumulatedModal.jsx # Popup de célébration & accumulation
+│   │       ├── Tilt3DCard.jsx           # Effet de profondeur 3D
+│   │       ├── Toast.jsx
+│   │       ├── UserProfile3D.jsx
+│   │       └── WelcomeSplash3D.jsx
+│   ├── context/
+│   │   └── TaskContext.jsx     # Gestion centralisée de l'état (State Management)
+│   ├── data/
+│   │   └── initialTasks.js     # Données initiales & configuration par défaut
+│   ├── hooks/
+│   │   ├── useDarkMode.js      # Hook de gestion du thème sombre/clair
+│   │   └── useLocalStorage.js # Hook de synchronisation avec le stockage local
+│   ├── utils/
+│   │   └── exportUtils.js      # Fonctions de génération PDF, Excel, CSV et JSON
+│   ├── App.jsx                 # Point d'entrée des vues principales
+│   ├── index.css               # Styles globaux & animations 3D
+│   └── main.jsx                # Point de montage React
+├── package.json
+├── tailwind.config.js
+└── vite.config.js
+```
+
+---
+
+## 💻 Installation & Démarrage Rapide
+
+### 1. Cloner le projet
 ```bash
 git clone https://github.com/AmineArheche/todo-list.git
 cd todo-list
@@ -37,28 +129,26 @@ cd todo-list
 npm install
 ```
 
-### 3. Lancer le serveur de développement
+### 3. Démarrer le serveur de développement
 ```bash
 npm run dev
 ```
-L'application sera accessible sur `http://localhost:5173/`.
+Ouvrez votre navigateur à l'adresse [http://localhost:5173/](http://localhost:5173/).
 
-### 4. Construire pour la production
+### 4. Compiler pour la production
 ```bash
 npm run build
 ```
+Les fichiers prêts pour le déploiement seront générés dans le répertoire `dist/`.
 
 ---
 
-## 🛠️ Technologies Utilisées
+## 📜 Licence
 
-- **Framework & Outils** : [React 19](https://react.dev/), [Vite](https://vitejs.dev/)
-- **Styles & UI** : [Tailwind CSS v4](https://tailwindcss.com/), [Lucide React](https://lucide.dev/) (icônes)
-- **Animations & Effets** : [Canvas Confetti](https://www.npmjs.com/package/canvas-confetti), CSS 3D Transforms
-- **Exportation** : [jsPDF](https://github.com/parallax/jsPDF), [jspdf-autotable](https://github.com/simonbengtsson/jsPDF-AutoTable), [SheetJS (xlsx)](https://sheetjs.com/)
+Ce projet est sous licence **MIT**. Vous êtes libre de l'utiliser, de le modifier et de le distribuer. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
-## 📄 Licence
-
-Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+<div align="center">
+  Fait avec passion par <strong>Amine Arheche</strong> 🚀
+</div>

@@ -26,6 +26,17 @@ export function WelcomeSplash3D() {
 
   const greeting = getGreeting();
 
+  const DURATION_MS = 7000; // 7 seconds total duration
+
+  // Dynamic phase message during the 7-second 3D refresh
+  const getPhaseText = (p) => {
+    if (p < 25) return "Initialisation de l'environnement 3D...";
+    if (p < 55) return "Synchronisation des objectifs et KPIs...";
+    if (p < 85) return "Optimisation du moteur de productivité...";
+    if (p < 100) return "Finalisation de l'espace de travail...";
+    return "Espace 3D Prêt !";
+  };
+
   useEffect(() => {
     if (is3DRefreshing) {
       setIsVisible(true);
@@ -36,19 +47,21 @@ export function WelcomeSplash3D() {
   useEffect(() => {
     if (!isVisible) return;
 
+    const startTime = Date.now();
     const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => {
-            setIsVisible(false);
-            if (stop3DRefresh) stop3DRefresh();
-          }, 400);
-          return 100;
-        }
-        return prev + 10;
-      });
-    }, 90);
+      const elapsed = Date.now() - startTime;
+      const calculatedProgress = Math.min(100, Math.round((elapsed / DURATION_MS) * 100));
+
+      setProgress(calculatedProgress);
+
+      if (elapsed >= DURATION_MS) {
+        clearInterval(interval);
+        setTimeout(() => {
+          setIsVisible(false);
+          if (stop3DRefresh) stop3DRefresh();
+        }, 350);
+      }
+    }, 40);
 
     return () => clearInterval(interval);
   }, [isVisible, stop3DRefresh]);
@@ -115,21 +128,31 @@ export function WelcomeSplash3D() {
           </p>
         </div>
 
-        {/* 3D Progress Bar */}
-        <div className="w-full mt-6 space-y-2">
-          <div className="flex items-center justify-between text-xs text-slate-400 font-medium px-1">
-            <span className="flex items-center gap-1.5">
+        {/* 3D Progress Bar & Dynamic Status */}
+        <div className="w-full mt-6 space-y-2.5">
+          <div className="flex items-center justify-between text-xs font-medium px-1">
+            <span className="flex items-center gap-1.5 text-slate-300">
               <ShieldCheck className="w-3.5 h-3.5 text-brand-400" />
-              <span>Synchronisation 3D de l'espace</span>
+              <span>{getPhaseText(progress)}</span>
             </span>
-            <span className="text-brand-300 font-bold">{progress}%</span>
+            <span className="text-brand-300 font-bold font-mono">{progress}%</span>
           </div>
 
-          <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden p-0.5 border border-slate-700">
+          <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden p-0.5 border border-slate-700">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-brand-500 via-indigo-400 to-cyan-400 transition-all duration-200 shadow-[0_0_12px_rgba(99,102,241,0.8)]"
+              className="h-full rounded-full bg-gradient-to-r from-brand-500 via-indigo-400 to-cyan-400 transition-all duration-100 shadow-[0_0_12px_rgba(99,102,241,0.8)]"
               style={{ width: `${progress}%` }}
             />
+          </div>
+
+          <div className="flex items-center justify-between text-[11px] text-slate-400 px-1">
+            <span className="inline-flex items-center gap-1">
+              <Sparkles className="w-3 h-3 text-amber-400" />
+              <span>Rendu 3D en cours</span>
+            </span>
+            <span className="text-slate-400 font-mono">
+              {Math.max(0, Math.ceil((7000 - (progress * 70)) / 1000))}s
+            </span>
           </div>
         </div>
 

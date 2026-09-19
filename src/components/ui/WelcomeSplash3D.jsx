@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTasks } from '../../context/TaskContext';
 import {
-  CheckSquare,
+  CheckCircle2,
   Sparkles,
   Target,
   Zap,
@@ -75,7 +75,7 @@ export function WelcomeSplash3D() {
           {/* Isometric 3D Cube */}
           <div className="cube-wrapper animate-cube-rotate">
             <div className="cube-face cube-front">
-              <CheckSquare className="w-9 h-9 text-brand-300 drop-shadow-[0_0_8px_rgba(99,102,241,0.8)]" />
+              <CheckCircle2 className="w-9 h-9 text-brand-300 drop-shadow-[0_0_8px_rgba(99,102,241,0.8)]" />
             </div>
             <div className="cube-face cube-back">
               <Trophy className="w-9 h-9 text-amber-300 drop-shadow-[0_0_8px_rgba(245,158,11,0.8)]" />

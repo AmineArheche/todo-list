@@ -11,6 +11,7 @@ import { UserProfileModal } from './components/ui/UserProfile3D';
 import { WelcomeSplash3D } from './components/ui/WelcomeSplash3D';
 import { ExportModal } from './components/ui/ExportModal';
 import { TaskAccumulatedModal } from './components/ui/TaskAccumulatedModal';
+import { Logo3D } from './components/ui/Logo3D';
 import { ToastContainer } from './components/ui/Toast';
 import { Heart, Sparkles, CheckCircle2 } from 'lucide-react';
 
@@ -51,8 +52,8 @@ function DashboardContent() {
       {/* Footer */}
       <footer className="border-t border-slate-200/80 dark:border-slate-800/80 py-6 mt-12 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-500" />
+          <div className="flex items-center gap-2.5">
+            <Logo3D size="sm" animated={false} />
             <span className="font-semibold text-slate-700 dark:text-slate-300">
               To-Do List Pro 3D
             </span>

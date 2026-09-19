@@ -3,8 +3,8 @@ import { useTasks } from '../../context/TaskContext';
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { UserProfileBadge } from '../ui/UserProfile3D';
 import { Refresh3DButton } from '../ui/Refresh3DButton';
+import { Logo3D } from '../ui/Logo3D';
 import {
-  CheckSquare,
   Plus,
   Moon,
   Sun,
@@ -24,9 +24,7 @@ export function Header() {
           
           {/* Left: Logo & Brand with 3D depth */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/25 ring-2 ring-brand-500/20 group hover:rotate-6 transition-transform">
-              <CheckSquare className="w-6 h-6 md:w-7 md:h-7" />
-            </div>
+            <Logo3D size="md" />
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-base sm:text-lg md:text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
